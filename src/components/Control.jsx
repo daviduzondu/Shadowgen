@@ -17,7 +17,7 @@ function ControlPane({ label, type, onChangeHandler, value, children }) {
             {
                 type === 'color' ? <HexAlphaColorPicker color={value} onChange={onChangeHandler} />
                     :
-                    (type && <input type={type} name={label} value={value} min={(label === 'Spread' || label === "Blur") ? 0 : -100} max={(label === 'Spread' || label === "Blur") ? 100 : 350} onChange={onChangeHandler} />)
+                    (type && <input type={type} name={label} value={value} min={(label === 'Spread' || label === "Blur") ? 0 : -350} max={(label === 'Spread' || label === "Blur") ? 100 : 350} onChange={onChangeHandler} />)
             }
         </div>
     )
