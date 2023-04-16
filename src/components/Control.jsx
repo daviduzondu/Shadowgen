@@ -1,5 +1,5 @@
 import React from 'react'
-import { HexAlphaColorPicker, HexColorInput } from 'react-colorful'
+import { HexAlphaColorPicker } from 'react-colorful'
 
 function Control({ label, type, onChangeHandler, value }) {
     return (
