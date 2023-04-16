@@ -7,7 +7,7 @@ function ControlPane({ label, type, onChangeHandler, value, children }) {
             <div className='label'>
                 {/* <div></div> */}
                 <label htmlFor={label}>{label}</label>
-                {type !== "checkbox" && <span className='value'>{value}</span>}
+                {(type !== "checkbox" && value) && <span className='value'>{value}</span>}
             </div>
             {children &&
                 <div className='codeOutput'>
