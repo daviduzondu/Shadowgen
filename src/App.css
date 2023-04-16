@@ -27,6 +27,7 @@ body {
 .controlPane {
   padding: 10px;
   background-color: rgb(255 255 255 /15%);
+  backdrop-filter: blur(12px);
   border: solid 0.2px rgba(48, 48, 48, 0.17);
   border-radius: 5px;
   font-weight: 300;
@@ -39,14 +40,15 @@ body {
   justify-content: space-between;
 }
 
-.control .react-colorful {
+.paneChild .react-colorful {
   width: 100%;
 }
 
-.control:not([class*="checkbox"]) {
+.paneChild:not([class*="checkbox"]) {
   display: flex;
   flex-direction: column;
   width: 100%;
+
 }
 
 .codeOutput {
@@ -72,7 +74,7 @@ label[for="Inset"] {
   margin-left: 5px;
 }
 
-.control[class*="checkbox"] {
+.paneChild[class*="checkbox"] {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -91,12 +93,6 @@ label[for="Inset"] {
   display: flex;
   justify-content: space-between;
 }
-
-.react-colorful {
-  width: 100px;
-  height: 10px;
-}
-
 .labelText {
   display: flex;
 }

@@ -2,39 +2,22 @@ import React, { useState } from 'react'
 import Control from './Control'
 import CodeOutput from './CodeOutput'
 function Container() {
-    const [boxShadow, setBoxShadow] = useState([10, 10, 10, 10, " ", "#53535377"])
+    const [boxShadow, setBoxShadow] = useState([23, 23, 0, 10, " ", "#00000045"])
 
     function onChangeHandler(e, index) {
-        if (index === 5) {
-            setBoxShadow(boxShadow.map((c, i) => {
-                if (i === index) {
-                    return e;
-                } else {
-                    return c;
-                }
-            }))
-        } else if (index === 4) {
-            setBoxShadow(boxShadow.map((c, i) => {
-                if (i === index) {
-                    if (e.target.checked) {
-                        return 'inset';
-                    } else {
-                        return '';
-                    }
-                } else {
-                    return c;
-                }
-            }))
-        } else {
-            setBoxShadow(boxShadow.map((c, i) => {
-                if (i === index) {
-                    return +e.target.value;
-                } else {
-                    return c;
-                }
-            }))
+        switch (index) {
+            case 5:
+                setBoxShadow(boxShadow.map((c, i) => i === index ? e : c));
+                break;
+            case 4:
+                setBoxShadow(boxShadow.map((c, i) => i === index ? e.target.checked ? 'inset' : '' : c));
+                break;
+            default:
+                setBoxShadow(boxShadow.map((c, i) => i === index ? +e.target.value : c));
+                break;
         }
     }
+    
 
     const shadowArrayToString =
         (element) => {
@@ -42,8 +25,7 @@ function Container() {
                 return element + "px";
             }
             return element;
-        }
-
+    }
 
 
     return (
@@ -65,18 +47,7 @@ function Container() {
                     }}></div>
             </div>
             <div className='controlPane'>
-                <Control label="Output" />
-                <CodeOutput>
-                    box-shadow: {
-                    boxShadow.map((element) => {
-                        if (typeof element === 'number') {
-                            return element + "px";
-                        }
-                        return `${element}`;
-                    }).join(" ")
-                }
-                </CodeOutput>
-
+                <CodeOutput shadow={boxShadow} />
             </div>
         </>
     )
