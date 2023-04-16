@@ -76,7 +76,7 @@ label[for="Inset"] {
   margin-left: 5px;
 }
 
-span{
+.value{
     background-color: rgb(43, 43, 43);
     color:white;
     padding:3px 10px 3px 10px;
