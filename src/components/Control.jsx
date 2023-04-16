@@ -1,19 +1,15 @@
 import React, { useState } from 'react'
 import { HexAlphaColorPicker, HexColorInput } from 'react-colorful'
 
-function ControlPane({ label, type, onChangeHandler, value, children }) {
+function Control({ label, type, onChangeHandler, value }) {
     return (
-        <div className={label !== "Inset" ? "control" : "controlCheckbox"}>
+        <div className={`control ${type}`}>
             <div className='label'>
-                {/* <div></div> */}
                 <label htmlFor={label}>{label}</label>
-                {(type !== "checkbox" && (typeof value === 'number')) && <span className='value'>{value}</span>}
+                {((type && type !== "checkbox") 
+                || (typeof value === 'number')) 
+                && <span className='value'>{value}</span>}
             </div>
-            {children &&
-                <div className='codeOutput'>
-                    {children}
-                </div>
-            }
             {
                 type === 'color' ? <HexAlphaColorPicker color={value} onChange={onChangeHandler} />
                     :
@@ -23,4 +19,4 @@ function ControlPane({ label, type, onChangeHandler, value, children }) {
     )
 }
 
-export default ControlPane
+export default Control

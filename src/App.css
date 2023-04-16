@@ -27,31 +27,34 @@ body {
 .controlPane {
   padding: 10px;
   background-color: rgb(255 255 255 /15%);
-  border: solid 0.2px rgba(48, 48, 48, 0.170);
+  border: solid 0.2px rgba(48, 48, 48, 0.17);
   border-radius: 5px;
   font-weight: 300;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   z-index: 10;
 }
+
+.controlPane.controls {
+  justify-content: space-between;
+}
+
 .control .react-colorful {
   width: 100%;
 }
 
-.control {
+.control:not([class*="checkbox"]) {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* padding-bottom: 10px; */
 }
 
-.codeOutput{
-    background-color: rgb(43, 43, 43);
-    color:white;
-    padding:10px;
-    border-radius: 10px;
-    font-family: monospace;
+.codeOutput {
+  background-color: rgb(43, 43, 43);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: monospace;
 }
 
 .square {
@@ -65,22 +68,21 @@ body {
   transform: translateY(-50%);
 }
 
-.controlCheckbox {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-
 label[for="Inset"] {
   margin-left: 5px;
 }
 
-.value{
-    background-color: rgb(43, 43, 43);
-    color:white;
-    padding:3px 10px 3px 10px;
-    border-radius: 10px;
+.control[class*="checkbox"] {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+.value {
+  background-color: rgb(43, 43, 43);
+  color: white;
+  padding: 3px 10px 3px 10px;
+  border-radius: 10px;
 }
 
 .label {

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Control from './Control'
+import CodeOutput from './CodeOutput'
 function Container() {
     const [boxShadow, setBoxShadow] = useState([10, 10, 10, 10, " ", "#53535377"])
 
@@ -47,7 +48,7 @@ function Container() {
 
     return (
         <>
-            <div className='controlPane'>
+            <div className='controlPane controls'>
                 <Control label="Color" type="color" value={boxShadow[5]} onChangeHandler={e => onChangeHandler(e, 5)} />
                 <Control label="Offset X" type="range" value={boxShadow[0]} onChangeHandler={e => onChangeHandler(e, 0)} />
                 <Control label="Offset Y" type="range" value={boxShadow[1]} onChangeHandler={e => onChangeHandler(e, 1)} />
@@ -64,16 +65,18 @@ function Container() {
                     }}></div>
             </div>
             <div className='controlPane'>
-                <Control label="Output">
+                <Control label="Output" />
+                <CodeOutput>
                     box-shadow: {
-                        boxShadow.map((element) => {
-                            if (typeof element === 'number') {
-                                return element + "px";
-                            }
-                            return `${element}`;
-                        }).join(" ")
-                    }
-                </Control>
+                    boxShadow.map((element) => {
+                        if (typeof element === 'number') {
+                            return element + "px";
+                        }
+                        return `${element}`;
+                    }).join(" ")
+                }
+                </CodeOutput>
+
             </div>
         </>
     )
