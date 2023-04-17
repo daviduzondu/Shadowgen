@@ -24,17 +24,15 @@ function App() {
             </div>
           </>
           :
-          <div className='responsive'>
-
-
+          <div className='unsupportedDevice'>
             <h1>
               ⚠️
             </h1>
             <br />
-            <h1>
+            <h6>
               Your {window.clientInformation.userAgentData.platform} device screen is not supported.
               Please run this on desktop or a device with bigger screen.
-            </h1>
+            </h6>
 
           </div>
       }
