@@ -28,11 +28,13 @@ function App() {
 
 
             <h1>
-              Your {window.clientInformation.userAgentData.platform} device screen is not supported.
+              ⚠️
             </h1>
-            <h3>
+            <br />
+            <h2>
+              Your {window.clientInformation.userAgentData.platform} device screen is not supported.
               Please run this on desktop or a device with bigger screen.
-            </h3>
+            </h2>
 
           </div>
       }
