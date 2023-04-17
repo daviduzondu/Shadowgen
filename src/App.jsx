@@ -29,10 +29,10 @@ function App() {
               ⚠️
             </h1>
             <br />
-            <h6>
+            <span>
               Your {window.clientInformation.userAgentData.platform} device screen is not supported.
               Please run this on desktop or a device with bigger screen.
-            </h6>
+            </span>
 
           </div>
       }

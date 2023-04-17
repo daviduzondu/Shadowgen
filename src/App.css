@@ -105,3 +105,7 @@ label[for="Inset"] {
   text-align: center;
   font-weight: 200;
 }
+
+.unsupportedDevice > span {
+  font-size: 20px;
+}
