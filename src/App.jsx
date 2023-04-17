@@ -30,7 +30,7 @@ function App() {
             </h1>
             <br />
             <span>
-              Your {window.clientInformation.userAgentData.platform} device screen is not supported.
+              Your {window.clientInformation.userAgentData.platform} device screen size is not supported.
               Please run this on desktop or a device with bigger screen.
             </span>
 
